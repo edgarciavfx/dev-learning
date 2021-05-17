@@ -11,8 +11,8 @@ Now I've started my journey to learn and work with react framework and get the b
 
 Eloquent JavaScript 
 - by Marjin Haverbeke
-https://eloquentjavascript.net/
+- at https://eloquentjavascript.net/
 
 50 Projects In 50 Days - HTML, CSS & JavaScript 
 - by Brad Traversy
-https://www.udemy.com/course/50-projects-50-days/
+- at https://www.udemy.com/course/50-projects-50-days/
