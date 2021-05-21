@@ -49,20 +49,3 @@ function addTask(text) {
 
   textInput.value = '';
 }
-
-
-// //my sort algo
-// const myArray = [6, 7, 4, 2, 9 ,10, 5, 3, 1, 0, 8];
-// console.log('array pre sort -> ' + myArray);
-
-// for (let i = 0; i < myArray.length; i++) {
-//   const pivot = myArray[i];
-//   for (let j = 0; j < myArray.length; j++) {
-//     const eval = myArray[j];
-//     // if (pivot <= eval) {
-//     //   myArray[j] = pivot;
-//     // }
-//   }
-// }
-
-// console.log('sorted array   -> ' + myArray);

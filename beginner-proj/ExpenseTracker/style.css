@@ -44,6 +44,18 @@ td, th {
   background-color: #eee;
 }
 
+.type-area.good {
+  background-color: green;
+}
+
+.type-area.bad {
+  background-color: orange;
+}
+
+.type-area.ugly {
+  background-color: red;
+}
+
 .close {
   margin: 0;
   padding: 0;
@@ -55,5 +67,5 @@ td, th {
 }
 
 .close:active {
-  transform: scale(0.98);
+  transform: scale(0.85);
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Note Taker</title>
+</head>
+
+<body>
+  <h1>Note Taker</h1>
+
+  <form class="note-form">
+    <textarea name="" id="note-write-area" placeholder="Write your note here..."></textarea>
+    <br>
+    <button class="add-note" id="add-note">Add Note</button>
+  </form>
+
+  <main id="main">
+
+    <!-- Note starts here -->
+    <div class="note-container">
+      <h5 id="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo asperiores non placeat quis aperiam reprehenderit optio, facere veniam iste suscipit repellat iusto ipsum!
+      </h5>
+      <button id="note-detail" class="note-detail">View Detail</button>
+    </div>
+    <!-- note ends here -->
+
+    <!-- Note starts here -->
+    <div class="note-container">
+      <h5 id="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officiis eligendi facilis obcaecati laboriosam veritatis voluptas nisi vitae!
+      </h5>
+      <button id="note-detail" class="note-detail">View Detail</button>
+    </div>
+    <!-- note ends here -->
+
+    <!-- Note starts here -->
+    <div class="note-container">
+      <h5 id="note">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium eligendi provident. Doloribus, optio blanditiis. Tenetur itaque suscipit totam vitae voluptatibus libero explicabo recusandae quaerat ab aspernatur enim atque laboriosam harum sint ratione aliquam voluptates officiis praesentium asperiores est, eos optio deleniti fugit.
+      </h5>
+      <button id="note-detail" class="note-detail">View Detail</button>
+    </div>
+    <!-- note ends here -->
+
+  </main>
+
+  <!-- The Modal -->
+  <div id="noteModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span id="close-modal" class="close-modal">&times;</span>
+      <p id="modal-content-note"></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

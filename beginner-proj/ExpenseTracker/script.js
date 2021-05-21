@@ -4,8 +4,6 @@ const dateInput = document.getElementById('date');
 const amountInput = document.getElementById('amount');
 const addButton = document.getElementById('add');
 const table = document.getElementById('table');
-const closeBtn = document.querySelectorAll('.close');
-
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -13,31 +11,33 @@ form.addEventListener('submit', (event) => {
   addExpense();
 });
 
-closeBtn.forEach(button => {
-  button.addEventListener('click', (event) => {
-    event.path[3].remove();
-  });
-});
-
 function addExpense() {
-console.log(dateInput.value);
-
+  const expense = document.createElement('tr');
+  const closeArea = document.createElement('td');
+  const closeButton = document.createElement('button');
   const expenseHTML = `
     <td>${nameInput.value}</td>
     <td>${dateInput.value ? dateFormat(dateInput.value) : getDate()}</td>
     <td>$ ${amountInput.value}</td>
-    <td>
+    <td id="type-area" class="type-area">
       <label for="good"><input id="good" type="radio" name="${nameInput.value}" value="good"></label>
       <label for="bad"><input id="bad" type="radio" name="${nameInput.value}" value="bad"></label>
       <label for="ugly"><input id="ugly" type="radio" name="${nameInput.value}" value="ugly"></label>
     </td>
-    <td><button class="close"><i class="fas fa-window-close"></i></button></td>
   `;
 
-  const expense = document.createElement('tr');
   expense.innerHTML = expenseHTML;
 
+  closeButton.classList.add('close');
+  closeButton.innerText = 'X';
+
+  closeArea.appendChild(closeButton);
+  expense.appendChild(closeArea);
   table.appendChild(expense);
+
+  closeButton.addEventListener('click', () => {
+    table.removeChild(expense);
+  });
 
   nameInput.value = '';
   dateInput.value = '';
@@ -57,21 +57,3 @@ function dateFormat(dateString) {
 
   return  dateArray.join('-');
 }
-
-
-//mi milagrito dioy
-const myArray = [6, 7, 4, 2, 9 ,10, 5, 3, 1, 0, 8];
-console.log('array pre sort -> ' + myArray);
-
-for (let i = 0; i < myArray.length; i++) {
-  for (let j = 0; j < myArray.length; j++) {
-    if (myArray[j] >= myArray[j + 1]) {
-      const a = myArray[j];
-      const b = myArray[j + 1];
-      myArray[j] = b;
-      myArray[j + 1] = a;
-    }
-  }
-}
-
-console.log('sorted array   -> ' + myArray);
