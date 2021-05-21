@@ -2,25 +2,26 @@ const form = document.getElementById('form');
 const nameInput = document.getElementById('name-input');
 const dateInput = document.getElementById('date');
 const amountInput = document.getElementById('amount');
-const addBtn = document.getElementById('add');
+const addButton = document.getElementById('add');
 const table = document.getElementById('table');
 const closeBtn = document.querySelectorAll('.close');
 
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
 
   addExpense();
 });
 
-closeBtn.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.path[3].remove();
-    // console.log(e);
+closeBtn.forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.path[3].remove();
   });
 });
 
 function addExpense() {
+console.log(dateInput.value);
+
   const expenseHTML = `
     <td>${nameInput.value}</td>
     <td>${dateInput.value ? dateFormat(dateInput.value) : getDate()}</td>
@@ -44,26 +45,33 @@ function addExpense() {
 }
 
 function getDate() {
-  let date = new Date()
+  const date = new Date();
 
-  let day = date.getDate()
-  let month = date.getMonth() + 1
-  let year = date.getFullYear()
-
-  if(month < 10){
-    return `${day}-0${month}-${year}`;
-  }else{
-    return `${day}-${month}-${year}`;
-  }
+  return date.toLocaleDateString('mx', { year: 'numeric', month: '2-digit', day: '2-digit' })
+    .replaceAll('/', '-');
 }
 
 function dateFormat(dateString) {
   dateArray = dateString.split('-');
-
-  const year = dateArray[0];
-  const day = dateArray[2];
-  dateArray[0] = day;
-  dateArray[2] = year;
+  dateArray.reverse();
 
   return  dateArray.join('-');
 }
+
+
+//mi milagrito dioy
+const myArray = [6, 7, 4, 2, 9 ,10, 5, 3, 1, 0, 8];
+console.log('array pre sort -> ' + myArray);
+
+for (let i = 0; i < myArray.length; i++) {
+  for (let j = 0; j < myArray.length; j++) {
+    if (myArray[j] >= myArray[j + 1]) {
+      const a = myArray[j];
+      const b = myArray[j + 1];
+      myArray[j] = b;
+      myArray[j + 1] = a;
+    }
+  }
+}
+
+console.log('sorted array   -> ' + myArray);
