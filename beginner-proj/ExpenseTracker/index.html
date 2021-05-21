@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Expense Tracker</title>
+</head>
+
+<body>
+  <h1>Expense Tracker</h1>
+  <h2>Add New Item</h2>
+  <div class="form-container">
+    <form id="form">
+      Name: <input id="name-input" class="name" type="text" placeholder="Tipo de gasto" required>
+      <br>
+      Date: <input id="date" class="date" type="date">
+      Amount: <input id="amount" class="amount" type="number" required>
+      <button id="add">Add Expense</button>
+    </form>
+  </div>
+  <table id="table" class="table">
+    <tr class="header">
+      <th id="name">Name</th>
+      <th id="date">Date</th>
+      <th id="amount">Amount</th>
+      <th id="type">Type</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Chillis</td>
+      <td>18-09-2021</td>
+      <td>$12</td>
+      <td>  
+        <label for="good">
+          <input id="good" type="radio" name="type" value="good"> 
+            <!-- Good -->
+        </label>
+        <label for="bad">
+          <input id="bad" type="radio" name="type" value="bad"> 
+            <!-- Bad -->
+        </label>
+        <label for="ugly">
+          <input id="ugly" type="radio" name="type" value="ugly">
+            <!-- Ugly -->
+        </label>
+          <br>
+      </td>
+      <td><button class="close"><i class="fas fa-window-close"></i></button></td>
+    </tr>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
